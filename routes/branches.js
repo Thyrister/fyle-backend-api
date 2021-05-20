@@ -13,14 +13,14 @@ router.use((req, res, next) => {
 router.get("/autocomplete", async (req, res) => {
     const { q, limit, offset } = req.query;
     const branches = await getBanksForAutocompleteQuery(q, limit, offset);
-    res.json({ branches });
+    res.json(branches );
 });
 
 
 router.get("/", async (req, res) => {
     const { q, limit, offset } = req.query;
     const branches = await getBanksForQuery(q, limit, offset);
-    res.json({ branches });
+    res.json(branches );
 });
 
 
